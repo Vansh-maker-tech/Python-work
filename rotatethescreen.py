@@ -1,7 +1,10 @@
-import rotatescreen
-import time
-screen = rotatescreen.get_primary_display()
+import curses
+from curses import wrapper
 
-for i in range(13):
-	time.sleep(1)
-	screen.rotate_to(i%90 / 360)
+def main(stdscr):
+	stdscr.clear()
+	stdscr.addstr(5,10,"Hello World")
+	#stdscr.refresh()
+	stdscr.getch()
+	
+wrapper(main)
